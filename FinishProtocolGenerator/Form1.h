@@ -3094,7 +3094,9 @@ private: void drawButton(char* buttonName, char* textBefore, char* textAfter, in
 								  if(finishProtocolListSorted[competitorsCounter]->numberOfLapsFinished>lapsCompetitorCounter) {
 									  fprintf(groupProtocolFile,"<td ALIGN=center COLSPAN=%d>", columnsNumber);
 										  writeTimeByDouble(groupProtocolFile, finishProtocolListSorted[competitorsCounter]->lapTimes[lapsCompetitorCounter]);
-										  fprintf(groupProtocolFile,"<NOBR>%s</NOBR>",finishProtocolListSorted[competitorsCounter]->lapPenaltyComment[lapsCompetitorCounter]);
+										  if(isNumberOfTries()) {
+											fprintf(groupProtocolFile,"<NOBR>%s</NOBR>",finishProtocolListSorted[competitorsCounter]->lapPenaltyComment[lapsCompetitorCounter]);
+										  }
 										  if(finishProtocolListSorted[competitorsCounter]->stagesNumber != 1 && finishProtocolListSorted[competitorsCounter]->lapFinishNumbers[lapsCompetitorCounter] != -1) {
 											  fprintf(groupProtocolFile,"(%d)",finishProtocolListSorted[competitorsCounter]->lapFinishNumbers[lapsCompetitorCounter]);
 										  }
@@ -3458,7 +3460,9 @@ private: void drawButton(char* buttonName, char* textBefore, char* textAfter, in
 								  if(finishProtocolListSorted[competitorsCounter]->numberOfLapsFinished>lapsCompetitorCounter) {
 									  fprintf(absoluteProtocolFile,"<td ALIGN=center COLSPAN=%d>", columnsNumber);
 									  writeTimeByDouble(absoluteProtocolFile, finishProtocolListSorted[competitorsCounter]->lapTimes[lapsCompetitorCounter]);
-									  fprintf(absoluteProtocolFile,"<NOBR>%s</NOBR>",finishProtocolListSorted[competitorsCounter]->lapPenaltyComment[lapsCompetitorCounter]);
+									  if(isNumberOfTries()) {
+										  fprintf(absoluteProtocolFile,"<NOBR>%s</NOBR>",finishProtocolListSorted[competitorsCounter]->lapPenaltyComment[lapsCompetitorCounter]);
+									  }
 										  if(finishProtocolListSorted[competitorsCounter]->stagesNumber != 1 && finishProtocolListSorted[competitorsCounter]->lapFinishNumbers[lapsCompetitorCounter] != -1) {
 											  fprintf(absoluteProtocolFile,"(%d)",finishProtocolListSorted[competitorsCounter]->lapFinishNumbers[lapsCompetitorCounter]);
 										  }
