@@ -3859,7 +3859,7 @@ private: void drawButton(char* buttonName, char* textBefore, char* textAfter, in
 						  for(int lapsCounter = 0;((lapsCounter < finishProtocolList[competitorsCounter]->numberOfLapsFinished + 1) && (lapsCounter < finishProtocolList[competitorsCounter]->numberOfLaps)); lapsCounter++) {
 							  for(int crossPointsCounter = 0; crossPointsCounter < numberOfPoints; crossPointsCounter++) {
 								  double nextLapSeconds = double::MaxValue;
-								  if(lapsCounter != finishProtocolList[competitorsCounter]->numberOfLapsFinished + 1) {
+								  if(lapsCounter != finishProtocolList[competitorsCounter]->numberOfLapsFinished) {
 									  nextLapSeconds = finishProtocolList[competitorsCounter]->crossLineTimes[lapsCounter+1];
 								  }
 								  for(int counter = 0;counter < numberOfRemoteElements[crossPointsCounter]; counter++){
